@@ -95,8 +95,9 @@ CURRENT_USER = "whoami"
 HOSTNAME = "hostname"
 ISROOT = "echo $(id -u)"
 
-# Accepts YES/Y/yes/y or "enter"
-CHOISE_YES = set(['yes','y', 'ye', ''])
+#Accepts yes or y or YES or Y but no enter, just in case user made a mistake of pressing enter.
+#YES or Y added to avoid confusion between case sensitive and case insensitive
+CHOISE_YES = set(['yes','y', 'YES', 'Y'])
 
 # Available injectipon techniques
 AVAILABLE_TECHNIQUES = set(["classic","eval-based","time-based","file-based"])
@@ -112,4 +113,6 @@ USER_AGENT_LIST = [
         # Oldies 
 	"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 6.0)",
 	"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.1; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727)",
+	#Chrome 41.0.2228.0
+        "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
 ]
